@@ -1,29 +1,30 @@
 
 public class InvalidNumber {
-	  InvalidNumber(int Number)
+	 void validateage(int age)
 	{
-		if(Number<0)
+		if(age<18)
 		{
-			throw new ArithmeticException("Negative Number");
+			throw new ArithmeticException("Invalid age");
 			
 		}
 		else
 		{
-			System.out.println("not negative ");
+			System.out.println("Valid age");
 		}
 	}
 
 	public static void main(String[] args) {
+		InvalidNumber ob= new InvalidNumber(); 
 		
 		try {
-			InvalidNumber ob=new InvalidNumber(4);
+			ob.validateage(20);
+			
 			}
 		catch(Exception e)
 		{
 			System.out.println(e.getMessage());
 		}
-		// TODO Auto-generated method stub
-
+		
 	}
 
 }
