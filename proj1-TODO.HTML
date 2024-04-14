@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <head>
+    <title>todolist</title>
+    </head>
+    <body>
+        <center>
+        <h1>TO-DO LIST</h1>
+        <form  name="sample">
+            <br>
+            DATE: <input type="date"  name="date"><br><br>
+            TODO ITEM: <input type="text"  name="todoitem">
+            <br><br>
+            <input type="button" name="add" value="Add Task" onclick="validatetodolist();" > <br><br>    
+            <table id="tb1" class="table" border="1">
+                <thead>
+                    <th>DATE</th>
+                    <th>TO-DO DESCRIPTION</th>
+                    <th>ACTION</th>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </form>
+    </center>
+        <script>
+        
+            function validatetodolist()
+            {
+                var date=document.sample.date.value;
+                var todoitem=document.sample.todoitem.value;
+                var action=document.sample.action.value;
+
+                var tr = document.createElement('tr');
+
+                var td1 = tr.appendChild(document.createElement('td'));
+                var td2 = tr.appendChild(document.createElement('td'));
+                var td3 = tr.appendChild(document.createElement('td'));
+                td1.innerHTML=date;
+                td2.innerHTML=todoitem;
+                if(!date || !todoitem ) {
+            alert("Required to fill all the data");
+          return;
+            }
+                var checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            td3.appendChild(checkbox); 
+            document.getElementById("tb1").appendChild(tr);
+        
+
+        }
+
+
+
+
+
+        </script>
+       
+    </body>
+</html>
