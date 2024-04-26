@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome Page</title>
+<style>
+#a{
+text-align:center;
+background-color:beige;
+}
+.loginbutton{
+background-color : #04AA6D;
+color : white;
+width : 70px;
+cursor : pointer;
+}
+
+</style>
+</head>
+
+<body>
+<div id="a">
+	<form action="http://localhost:8080/loginservlet/paymentappLogin.html" method="post">
+<h1>Welcome To Payment Application </h1>
+<h2>If slowness is observed during login page loading,please refresh the page for better experience.</h2>
+<label>Username*</label>
+<input type="text" name="Username"><br><br>
+<label>Password*</label>
+<input type="text" name="Password"><br><br>
+<button type="submit" class="loginbutton">Login</button>
+</form>
+</div>
+<div class="container">
+	<p>---Register Here---</p>
+	<a href="http://localhost:8080/loginservlet/paymentappRegistration.html"><button>Register</button></a>
+</div>
+</body>
+</html>
