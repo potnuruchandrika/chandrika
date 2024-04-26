@@ -7,32 +7,41 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class Registrationservlet
- */
+
 @WebServlet("/Registrationservlet")
 public class Registrationservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    
     public Registrationservlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		String firstname=request.getParameter("First Name");
+		String lastname=request.getParameter("Last Name");
+		String createpassword=request.getParameter("Create Password");
+		String phonenumber=request.getParameter("Phone Number");
+		String email=request.getParameter("Email");
+		System.out.println(lastname);
+		response.getWriter().write(firstname);
+		System.out.println("Done");
+		user u=new user();
+		u.setFirstName(firstname);
+		u.setLastName(lastname);
+		u.setPhoneNumber(phonenumber);
+		u.setEmail(email);
+		u.setPassword(createpassword);
+		PaymentAppDAO pd = new PaymentAppDAO();
+		pd.insert(u);
+		
+		
+		
+		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
